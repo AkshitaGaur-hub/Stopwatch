@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Removes scrollbars */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.background img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    opacity:0.9;
+}
+/* ...existing code... */
+
+.servicesContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 95vw;
+    width: 100%;
+    box-sizing: border-box;
+    color   : white;
+}
+
+.serviceList {
+    color   : black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    justify-content: center;
+}
+
+.serviceCard {
+    background: #f4f4fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2vw 1.5vw;
+    width: 18vw;
+    min-width: 220px;
+    min-height: 15vw;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    .serviceCard {
+        width: 40vw;
+        min-width: 180px;
+        min-height: 22vw;
+        padding: 4vw 2vw;
+    }
+    .servicesContainer {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .serviceList {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .serviceCard {
+        width: 90vw;
+        min-width: unset;
+        min-height: unset;
+        padding: 6vw 3vw;
+    }
+    .servicesContainer {
+        padding: 1rem 0.5rem;
+        border-radius: 8px;
+    }
+    .servicesContainer h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.serviceCard:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(106,94,161,0.13);
+}
+.serviceCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #333;
+    font-family: 'Fjalla One', sans-serif;
+}
